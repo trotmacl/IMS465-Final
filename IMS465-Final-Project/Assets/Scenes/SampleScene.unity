@@ -238,6 +238,8 @@ MonoBehaviour:
   enemyZ: -1.66
   playerX: 4.24
   playerZ: -1.71
+  isPlayerInside: 0
+  enemy: {fileID: 0}
 --- !u!1 &398416013
 GameObject:
   m_ObjectHideFlags: 0
@@ -353,6 +355,8 @@ MonoBehaviour:
   enemyZ: -4.79
   playerX: 6.25
   playerZ: -4.84
+  isPlayerInside: 0
+  enemy: {fileID: 0}
 --- !u!1 &409599617
 GameObject:
   m_ObjectHideFlags: 0
@@ -468,6 +472,58 @@ MonoBehaviour:
   enemyZ: -4.85
   playerX: -4.82
   playerZ: -4.9
+  isPlayerInside: 0
+  enemy: {fileID: 0}
+--- !u!1 &616006547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 616006549}
+  - component: {fileID: 616006548}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &616006548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616006547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4d91db822ef2804fba025d109cb1579, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  outerCells:
+  - {fileID: 907472090}
+  - {fileID: 162995760}
+  - {fileID: 398416018}
+  - {fileID: 1884656989}
+  - {fileID: 409599622}
+  enemy: {fileID: 3201573840713126071, guid: aab886abfb70d93409fdfb1c58bf1782, type: 3}
+--- !u!4 &616006549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616006547}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.017514743, y: -3.1305282, z: -4.3785095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -676,6 +732,8 @@ MonoBehaviour:
   enemyZ: -1.66
   playerX: -2.38
   playerZ: -1.71
+  isPlayerInside: 0
+  enemy: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,103 +817,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 59.91, y: 0, z: 0}
---- !u!1 &1106683789
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1106683793}
-  - component: {fileID: 1106683792}
-  - component: {fileID: 1106683791}
-  - component: {fileID: 1106683790}
-  m_Layer: 0
-  m_Name: Enemy
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!136 &1106683790
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106683789}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!23 &1106683791
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106683789}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 41c3c2b210471634fb8cdb826e44a086, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1106683792
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106683789}
-  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &1106683793
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1106683789}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.19, y: 0.73, z: -8.33}
-  m_LocalScale: {x: 0.71, y: 0.71, z: 0.71}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1472963471
 GameObject:
   m_ObjectHideFlags: 0
@@ -1068,6 +1029,8 @@ MonoBehaviour:
   enemyZ: -4.79
   playerX: 1.03
   playerZ: -4.84
+  isPlayerInside: 0
+  enemy: {fileID: 0}
 --- !u!1 &1884656984
 GameObject:
   m_ObjectHideFlags: 0
@@ -1183,6 +1146,8 @@ MonoBehaviour:
   enemyZ: -8.33
   playerX: 1.21
   playerZ: -8.38
+  isPlayerInside: 0
+  enemy: {fileID: 0}
 --- !u!1001 &6974832331089155828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1193,6 +1158,18 @@ PrefabInstance:
     - target: {fileID: 1122681784053126071, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304004019902692443, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
+      propertyPath: cell
+      value: 
+      objectReference: {fileID: 1752568837}
+    - target: {fileID: 3304004019902692443, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
+      propertyPath: moveCooldown
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3304004019902692443, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
+      propertyPath: snagCooldown
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6768893867798424341, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
       propertyPath: m_RootOrder
