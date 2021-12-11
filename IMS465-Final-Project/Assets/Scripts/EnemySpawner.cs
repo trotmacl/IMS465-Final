@@ -11,6 +11,13 @@ public class EnemySpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Set values of outer cell array
+        outerCells[0] = GameObject.Find("CellTopLeft").GetComponent<Cell>();
+        outerCells[1] = GameObject.Find("CellTopRight").GetComponent<Cell>();
+        outerCells[2] = GameObject.Find("CellMidRight").GetComponent<Cell>();
+        outerCells[3] = GameObject.Find("CellBottom").GetComponent<Cell>();
+        outerCells[4] = GameObject.Find("CellMidLeft").GetComponent<Cell>();
+
         int gapIndex1 = Random.Range(0, 4);
         int gapIndex2;
         if (Random.Range(0, 1) == 0)

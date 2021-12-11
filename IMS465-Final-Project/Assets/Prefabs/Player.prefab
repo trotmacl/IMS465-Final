@@ -110,5 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d57c8d1f1c7f6e45bdf38377c6a585e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveCooldown: 0
-  snagCooldown: 0
+  hp: 0
+  attackCooldown: 2
+  moveCooldown: 3
+  snagCooldown: 4
+  cell: {fileID: 0}
