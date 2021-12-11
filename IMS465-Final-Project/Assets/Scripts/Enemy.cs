@@ -20,7 +20,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.R)) {
+            Destroy(this.gameObject);
+        }
     }
 
     public void TakeDamage()
@@ -40,16 +42,19 @@ public class Enemy : MonoBehaviour
 
     IEnumerator Attack() {
         yield return new WaitForSeconds(Random.Range(2, 9));
-        target = GameObject.Find("Player").GetComponent<Player>().cell;
-        blip.SetActive(true);
-        target.enemyAttackIndicator.SetActive(true);
-        StartCoroutine(BlipOff());
-        StartCoroutine(LandAttack());
+        if (FindObjectOfType<Player>() != null)
+        {
+            target = FindObjectOfType<Player>().cell;
+            blip.SetActive(true);
+            target.enemyAttackIndicator.SetActive(true);
+            StartCoroutine(BlipOff());
+            StartCoroutine(LandAttack());
+        }
     }
     
     IEnumerator BlipOn() {
         yield return new WaitForSeconds(0.16f);
-        if (target != null) {
+        if (target != null && FindObjectOfType<Player>() != null) {
             blip.SetActive(true);
             target.enemyAttackIndicator.SetActive(true);
             StartCoroutine(BlipOff());
@@ -58,7 +63,7 @@ public class Enemy : MonoBehaviour
 
     IEnumerator BlipOff() {
         yield return new WaitForSeconds(0.16f);
-        if (target != null)
+        if (target != null && FindObjectOfType<Player>() != null)
         {
             blip.SetActive(false);
             target.enemyAttackIndicator.SetActive(false);
@@ -69,11 +74,15 @@ public class Enemy : MonoBehaviour
     IEnumerator LandAttack() {
         yield return new WaitForSeconds(0.64f);
         target.ActivateEIndicator();
-        if (target.isPlayerInside) {
-            GameObject.Find("Player").GetComponent<Player>().TakeDamage();
+        if (FindObjectOfType<Player>() != null)
+        {
+            if (target.isPlayerInside)
+            {
+                FindObjectOfType<Player>().TakeDamage();
+            }
+            target = null;
+            StartCoroutine(Attack());
         }
-        target = null;
-        StartCoroutine(Attack());
     }
     
 }

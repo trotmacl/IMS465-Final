@@ -18,15 +18,16 @@ public class RestartManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.R)) {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
             //Destroy game objects
-            Destroy(GameObject.Find("Player"));
-            while (GameObject.FindWithTag("Enemy") != null) {
-                Destroy(GameObject.FindWithTag("Enemy"));
+            if (FindObjectOfType<Player>() != null) {
+                Destroy(FindObjectOfType<Player>().gameObject);
             }
-            Destroy(GameObject.Find("EnemySpawner"));
+            Destroy(FindObjectOfType<EnemySpawner>().gameObject);
             //Respawn game objects
-            Instantiate(playerPrefab, new Vector3(1.03f, 1.04f, -4.84f), Quaternion.identity);
+            Player newPlayer = (Player)Instantiate(playerPrefab, new Vector3(1.03f, 1.04f, -4.84f), Quaternion.identity);
+            newPlayer.cell = GameObject.Find("CellSpotlight").GetComponent<Cell>();
             Instantiate(enemySpawner);
         }
     }

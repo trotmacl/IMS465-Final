@@ -24,7 +24,7 @@ public class Cell : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Mathf.Abs(FindObjectOfType<Player>().transform.position.z - playerZ) < 0.1f && Mathf.Abs(FindObjectOfType<Player>().transform.position.x - playerX) < 0.1f)
+        if (FindObjectOfType<Player>() != null && Mathf.Abs(FindObjectOfType<Player>().transform.position.z - playerZ) < 0.1f && Mathf.Abs(FindObjectOfType<Player>().transform.position.x - playerX) < 0.1f)
         {
             isPlayerInside = true;
         }
