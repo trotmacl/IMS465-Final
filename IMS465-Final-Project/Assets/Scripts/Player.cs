@@ -31,12 +31,18 @@ public class Player : MonoBehaviour
             Cell hoverCell = mouseRay.collider.gameObject.GetComponent<Cell>();
             if (hoverCell != null) {
                 //Check for Snag click
-                if (Input.GetMouseButtonDown(1) && canSnag && cell.enemy == null) {
+                if (Input.GetMouseButtonDown(1) && canSnag && cell.enemy == null)
+                {
                     GameObject snagTarget = hoverCell.enemy;
                     snagTarget.transform.position = new Vector3(cell.enemyX, snagTarget.transform.position.y, cell.enemyZ);
                     hoverCell.enemy = null;
                     cell.enemy = snagTarget;
                     StartCoroutine(Snag());
+                }
+                else if (hoverCell.enemy != null) {
+                    //Attack functionality
+
+                    StartCoroutine(Attack());
                 }
 
                 //Check for Move click
@@ -53,6 +59,18 @@ public class Player : MonoBehaviour
 
     public void TakeDamage() {
         
+    }
+
+    IEnumerator Attack() {
+        canAttack = false;
+        if (cell.isSpotlight)
+        {
+            yield return new WaitForSeconds(attackCooldown * 0.75f);
+        }
+        else {
+            yield return new WaitForSeconds(attackCooldown);
+        }
+        canAttack = true;
     }
 
     IEnumerator Move() {

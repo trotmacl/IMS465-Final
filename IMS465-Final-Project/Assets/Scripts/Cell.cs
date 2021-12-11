@@ -31,5 +31,24 @@ public class Cell : MonoBehaviour
         else {
             isPlayerInside = false;
         }
+
+        if (playerAttackIndicator.selfActive) {
+            StartCoroutine(DeactivatePIndicator());
+        }
+
+        if (enemyAttackIndicator.selfActive) {
+            StartCoroutine(DeactivateEIndicator());
+        }
+    }
+
+    IEnumerator DeactivatePIndicator() {
+        yield return new WaitForSeconds(0.5f);
+        playerAttackIndicator.SetActive(false);
+    }
+
+    IEnumerator DeactivateEIndicator()
+    {
+        yield return new WaitForSeconds(0.5f);
+        enemyAttackIndicator.SetActive(false);
     }
 }

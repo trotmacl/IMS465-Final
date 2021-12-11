@@ -2359,6 +2359,10 @@ PrefabInstance:
       propertyPath: snagCooldown
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3304004019902692443, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6768893867798424341, guid: 5f7950728c8d24d4982315ce2a225094, type: 3}
       propertyPath: m_RootOrder
       value: 9
