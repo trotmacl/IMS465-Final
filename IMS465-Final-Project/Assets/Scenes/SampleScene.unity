@@ -909,7 +909,7 @@ MonoBehaviour:
   - {fileID: 398416018}
   - {fileID: 1884656989}
   - {fileID: 409599622}
-  enemy: {fileID: 3201573840713126071, guid: aab886abfb70d93409fdfb1c58bf1782, type: 3}
+  enemy: {fileID: 3201573840713126056, guid: aab886abfb70d93409fdfb1c58bf1782, type: 3}
 --- !u!4 &616006549
 Transform:
   m_ObjectHideFlags: 0

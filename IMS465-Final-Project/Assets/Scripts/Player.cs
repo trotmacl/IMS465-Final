@@ -16,6 +16,7 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        canAttack = true;
         canMove = true;
         canSnag = true;
         hp = 5.0f;
@@ -39,7 +40,7 @@ public class Player : MonoBehaviour
                     cell.enemy = snagTarget;
                     StartCoroutine(Snag());
                 }
-                else if (hoverCell.enemy != null) {
+                else if (hoverCell.enemy != null && canAttack) {
                     //Attack functionality
                     hoverCell.enemy.TakeDamage();
                     hoverCell.playerAttackIndicator.SetActive(true);

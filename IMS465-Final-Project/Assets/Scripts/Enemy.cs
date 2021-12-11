@@ -31,7 +31,7 @@ public class Enemy : MonoBehaviour
         }
 
         if (hp < 0.1f) {
-            Destroy(this);
+            Destroy(this.gameObject);
         }
     }
 }
