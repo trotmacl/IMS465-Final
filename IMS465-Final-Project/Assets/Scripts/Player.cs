@@ -7,6 +7,7 @@ public class Player : MonoBehaviour
     private bool canAttack;
     private bool canMove;
     private bool canSnag;
+    public float hp;
     [SerializeField] private float attackCooldown;
     [SerializeField] private float moveCooldown;
     [SerializeField] private float snagCooldown;
@@ -17,6 +18,7 @@ public class Player : MonoBehaviour
     {
         canMove = true;
         canSnag = true;
+        hp = 5.0f;
     }
 
     // Update is called once per frame

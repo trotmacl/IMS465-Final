@@ -12,6 +12,8 @@ public class Cell : MonoBehaviour
     [SerializeField] public float playerZ;
     public bool isPlayerInside;
     public GameObject enemy;
+    [SerializeField] public GameObject playerAttackIndicator;
+    [SerializeField] public GameObject enemyAttackIndicator;
 
     // Start is called before the first frame update
     void Start()
