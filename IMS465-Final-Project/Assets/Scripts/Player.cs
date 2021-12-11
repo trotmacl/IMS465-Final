@@ -60,7 +60,19 @@ public class Player : MonoBehaviour
     }
 
     public void TakeDamage() {
-        
+        if (cell.isSpotlight)
+        {
+            hp -= 1.5f;
+        }
+        else
+        {
+            hp -= 1.0f;
+        }
+
+        if (hp < 0.1f)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     IEnumerator Attack() {

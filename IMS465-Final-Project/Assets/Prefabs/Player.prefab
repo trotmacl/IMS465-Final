@@ -112,6 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   attackCooldown: 2
-  moveCooldown: 3
-  snagCooldown: 4
+  moveCooldown: 1
+  snagCooldown: 3
   cell: {fileID: 0}

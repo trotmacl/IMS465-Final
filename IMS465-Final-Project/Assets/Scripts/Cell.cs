@@ -35,10 +35,6 @@ public class Cell : MonoBehaviour
         if (playerAttackIndicator.activeSelf) {
             StartCoroutine(DeactivatePIndicator());
         }
-
-        if (enemyAttackIndicator.activeSelf) {
-            StartCoroutine(DeactivateEIndicator());
-        }
     }
 
     IEnumerator DeactivatePIndicator() {
@@ -50,5 +46,10 @@ public class Cell : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         enemyAttackIndicator.SetActive(false);
+    }
+
+    public void ActivateEIndicator() {
+        enemyAttackIndicator.SetActive(true);
+        StartCoroutine(DeactivateEIndicator());
     }
 }
