@@ -11,7 +11,7 @@ public class Cell : MonoBehaviour
     [SerializeField] public float playerX;
     [SerializeField] public float playerZ;
     public bool isPlayerInside;
-    public GameObject enemy;
+    public Enemy enemy;
     [SerializeField] public GameObject playerAttackIndicator;
     [SerializeField] public GameObject enemyAttackIndicator;
 
@@ -32,11 +32,11 @@ public class Cell : MonoBehaviour
             isPlayerInside = false;
         }
 
-        if (playerAttackIndicator.selfActive) {
+        if (playerAttackIndicator.activeSelf) {
             StartCoroutine(DeactivatePIndicator());
         }
 
-        if (enemyAttackIndicator.selfActive) {
+        if (enemyAttackIndicator.activeSelf) {
             StartCoroutine(DeactivateEIndicator());
         }
     }

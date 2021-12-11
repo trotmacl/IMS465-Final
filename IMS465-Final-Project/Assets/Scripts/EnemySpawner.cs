@@ -6,7 +6,7 @@ public class EnemySpawner : MonoBehaviour
 {
 
     [SerializeField] private Cell[] outerCells;
-    [SerializeField] private GameObject enemy;
+    [SerializeField] private Enemy enemy;
 
     // Start is called before the first frame update
     void Start()
@@ -36,8 +36,9 @@ public class EnemySpawner : MonoBehaviour
 
     private void SpawnEnemy(int index) {
         Cell cell = outerCells[index];
-        GameObject newEnemy = Instantiate(enemy, new Vector3(cell.enemyX, 0.73f, cell.enemyZ), Quaternion.identity);
+        Enemy newEnemy = (Enemy)Instantiate(enemy, new Vector3(cell.enemyX, 0.73f, cell.enemyZ), Quaternion.identity);
         cell.enemy = newEnemy;
+        newEnemy.cell = cell;
     }
 
 }
